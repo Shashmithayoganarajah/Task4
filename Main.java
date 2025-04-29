@@ -1,4 +1,3 @@
-// Node class: Each node holds data and a link to the next node
 class Node {
     int data;
     Node next;
@@ -9,35 +8,31 @@ class Node {
     }
 }
 
-// Stack class using Linked List
 class Stack {
-    Node top; // Top refers to the head node
+    Node top; 
 
     // Check if stack is empty
     public boolean isEmpty() {
         return top == null;
     }
 
-    // Push (insert) an element at the top
     public void push(int data) {
         Node newNode = new Node(data);
-        newNode.next = top;  // New node points to old top
-        top = newNode;       // New node becomes top
+        newNode.next = top;  
+        top = newNode;      
         System.out.println(data + " pushed into stack");
     }
 
-    // Pop (remove) the top element
     public int pop() {
         if (isEmpty()) {
             System.out.println("Stack Underflow");
             return -1;
         }
         int poppedData = top.data;
-        top = top.next;  // Move top to next node
+        top = top.next;
         return poppedData;
     }
 
-    // Peek (see) the top element without removing it
     public int peek() {
         if (isEmpty()) {
             System.out.println("Stack is empty");
@@ -46,7 +41,6 @@ class Stack {
         return top.data;
     }
 
-    // Get the size of the stack
     public int size() {
         int count = 0;
         Node current = top;
@@ -57,24 +51,20 @@ class Stack {
         return count;
     }
 
-    // Clear the stack
     public void clear() {
         top = null;
         System.out.println("Stack cleared");
     }
 }
 
-// Queue class using Linked List
 class Queue {
     Node head;
-    Node tail; // To efficiently add to the rear
+    Node tail; 
 
-    // Check if queue is empty
     public boolean isEmpty() {
         return head == null;
     }
 
-    // Add (enqueue) an element to the queue
     public void add(int data) {
         Node newNode = new Node(data);
         if (isEmpty()) {
@@ -87,7 +77,6 @@ class Queue {
         System.out.println(data + " added to queue");
     }
 
-    // Remove (dequeue) the front element
     public int remove() {
         if (isEmpty()) {
             System.out.println("Queue Underflow");
@@ -96,12 +85,11 @@ class Queue {
         int removedData = head.data;
         head = head.next;
         if (head == null) {
-            tail = null; // If the queue becomes empty, reset tail
+            tail = null; 
         }
         return removedData;
     }
 
-    // Peek (see) the front element without removing it
     public int peek() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
@@ -110,7 +98,6 @@ class Queue {
         return head.data;
     }
 
-    // Get the size of the queue
     public int size() {
         int count = 0;
         Node current = head;
@@ -121,7 +108,6 @@ class Queue {
         return count;
     }
 
-    // Clear the queue
     public void clear() {
         head = null;
         tail = null;
@@ -129,7 +115,6 @@ class Queue {
     }
 }
 
-// Main class to test
 public class Main {
     public static void main(String[] args) {
         Stack stack = new Stack();
